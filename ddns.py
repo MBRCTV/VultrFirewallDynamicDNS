@@ -96,12 +96,11 @@ else:
     quit()
 
 # send email report
-
 if len(from_email) == 0:
     quit()
 else:
     to_address_l = []
-    
+
     email_text = 'user ' + user + ' has been updated to ' + ip
     msg = EmailMessage()
     msg.set_content(email_text)
@@ -117,6 +116,6 @@ else:
         server.send_message(msg)
         server.close()
         print('successfully sent the email to: ')
-        print( "\n" .join(to_email))
+        print("\n" .join(to_email))
     except:
         print("failed to send email")
