@@ -1,5 +1,5 @@
 '''
-Dynamic DNS service for Vultr
+Dynamic DNS for Firewall for Vultr
 By MBRCTV
 
 credit for https://github.com/andyjsmith/Vultr-Dynamic-DNS
