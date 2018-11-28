@@ -1,0 +1,12 @@
+{
+	"api_key": "",
+	"firewallgroup": "",
+	"user": "",
+	"server_mode": "",
+	"ddns_domain": "",
+	"from_email": "",
+	"password": "",
+	"to_email": ["", ""],
+	"from_name": ""
+
+}
