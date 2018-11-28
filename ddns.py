@@ -8,8 +8,8 @@ import requests
 import smtplib
 import json
 import socket
-from email.mime.text import MIMEText
-
+from email.message import EmailMessage
+from email.headerregistry import Address
 
 
 # Import the values from the configuration file
@@ -100,18 +100,21 @@ else:
 if len(from_email) == 0:
     quit()
 else:
-    TEXT = 'user ' + user + ' has been updated to ' + ip
-    msg = MIMEText(TEXT)
+    to_address_l = []
+    
+    email_text = 'user ' + user + ' has been updated to ' + ip
+    msg = EmailMessage()
+    msg.set_content(email_text)
     msg['Subject'] = '[VultrIP] IP UPDATE'
-    msg['From'] = from_email
-    msg['to'] = " " .join(to_email)
+    msg['From'] = 'SCRIPT NOTIFICATION'
+    msg['To'] = ', '.join(to_email)
 
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
         server.login(from_email, password)
-        server.sendmail(from_email, to_email, msg.as_string())
+        server.send_message(msg)
         server.close()
         print('successfully sent the email to: ')
         print( "\n" .join(to_email))
