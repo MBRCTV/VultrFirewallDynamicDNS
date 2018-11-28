@@ -2,6 +2,7 @@
 Dynamic DNS service for Vultr
 By MBRCTV
 
+credit for https://github.com/andyjsmith/Vultr-Dynamic-DNS
 '''
 import requests
 import smtplib
