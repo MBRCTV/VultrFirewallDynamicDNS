@@ -8,6 +8,8 @@ import requests
 import smtplib
 import json
 import socket
+from email.mime.text import MIMEText
+
 
 
 # Import the values from the configuration file
@@ -98,23 +100,18 @@ else:
 if len(from_email) == 0:
     quit()
 else:
-    SUBJECT = '[VultrIP] IP UPDATE'
     TEXT = 'user ' + user + ' has been updated to ' + ip
-    message = """\
-    From: %s
-    To: %s
-    Subject: %s
-
-    %s
-    """ % (from_name, ", ".join(to_email), SUBJECT, TEXT)
-
+    msg = MIMEText(TEXT)
+    msg['Subject'] = '[VultrIP] IP UPDATE'
+    msg['From'] = from_email
+    msg['to'] = " " .join(to_email)
 
     try:
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
         server.login(from_email, password)
-        server.sendmail(from_email, to_email, message)
+        server.sendmail(from_email, to_email, msg.as_string())
         server.close()
         print('successfully sent the email to: ')
         print( "\n" .join(to_email))
