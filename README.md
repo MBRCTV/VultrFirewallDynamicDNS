@@ -15,8 +15,17 @@ Assuming you have a vultr account (if you dont have one you can use [my affiliat
 * select the protocol you would like to open for yourself like TCP 
 * enter the port or range for example `1 - 65535`	
 * select on source the ip (not important as the script will update it 
-* IMPORTANT, add a any word as a note to your rule, so the api can find it
-
+* IMPORTANT, add a any word as a note to your rule, so the api can find it, for example i use my username `mbrctv`
+* 
+	`api_key` vultr api key
+	`firewallgroup` the firewall ID
+	`user` the note you added (TODO: should be renamed to note )
+	`server_mode` (Optional) means that i run it on a seprate server that moniter my ddns domain i already have in place
+	`ddns_domain` (Optional) the ddns domain if you have
+	`from_email` (Optional) if you want email notification each time the IP changed
+	`password` (Optional) emails password
+	`to_email` (Optional) array of emails (can be array with only 1 email)
+	`from_name` (Optional) sender name
 
 #### Windows Task
 Create a task in Task Scheduler to run every 30 minutes. Follow the Microsoft guide for basic task creation.
