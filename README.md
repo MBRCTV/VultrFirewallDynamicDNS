@@ -15,7 +15,7 @@ Assuming you have a vultr account (if you dont have one you can use [my affiliat
 * select the protocol you would like to open for yourself like TCP 
 * enter the port or range for example `1 - 65535`	
 * select on source the ip (not important as the script will update it 
-* IMPORTANT, add a any word as a note to your rule, so the api can find it for example
+* IMPORTANT, add a any word as a note to your rule, so the api can find it
 
 
 #### Windows Task
