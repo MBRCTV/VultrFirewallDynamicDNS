@@ -31,7 +31,7 @@ if server_mode == "yes":
     # your os sends out a dns query
     ip = socket.gethostbyname(ddns_domain)
 else:
-    ip = requests.get("https://ip.42.pl/raw").text
+    ip = requests.get("https://api.ipify.org/").text
 
 # Get the list of DNS records from Vultr to translate the record name to recordid
 raw_rules = json.loads(requests.get("https://api.vultr.com/v1/firewall/rule_list?FIREWALLGROUPID=" +
