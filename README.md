@@ -6,6 +6,7 @@ because vultr don't accept a dynamic DDNS domain (like [no-ip](https://www.noip.
 
 This script will update vultr with your new ip every time it changes
 
+for example i have a freepbx server running in vultr so i set a firewall to only allow my location to access the server
 
 ### Setup
 
@@ -22,13 +23,16 @@ Assuming you have a vultr account (if you dont have one you can use [my affiliat
 
 `api_key` vultr api key \
 `firewallgroup` the firewall ID \
-`user` the note you added (TODO: should be renamed to note) \
-`server_mode` (Optional) means that i run it on a separate server that monitor my ddns domain i already have in place \
+`notes` the note you added for reference \
 `ddns_domain` (Optional) the ddns domain if you have \
 `from_email` (Optional) if you want email notification each time the IP changed \
 `password` (Optional) emails password \
 `to_email` (Optional) array of emails (can be array with only 1 email) \
 `from_name` (Optional) sender name
+
+you can set `api_key` as global, or set it for each firewall rule
+you can set `email or in global or for each firewall`
+
 
 ### Windows Task
 Create a task in Task Scheduler to run every 30 minutes. Follow the Microsoft guide for basic task creation.

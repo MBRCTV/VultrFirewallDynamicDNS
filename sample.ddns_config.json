@@ -1,12 +1,21 @@
-{
-	"api_key": "",
-	"firewallgroup": "",
-	"user": "",
-	"server_mode": "",
-	"ddns_domain": "",
-	"from_email": "",
-	"password": "",
-	"to_email": ["", ""],
-	"from_name": ""
-
+{	"api_key": "",
+	"firewalls":[
+		{	"api_key": "",
+			"firewallgroup": "",
+			"notes": "",
+			"ddns_domain": ""
+		},
+		{
+			"api_key": "",
+			"firewallgroup": "",
+			"notes": "",
+			"ddns_domain": ""
+		}
+	],
+	"email": {
+			"from_email": "",
+		"password": "",
+		"to_email": ["", ""],
+		"from_name": ""
+	}
 }

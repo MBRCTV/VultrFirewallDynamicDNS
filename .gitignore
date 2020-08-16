@@ -1,3 +1,6 @@
 ddns_config.json
-
 cp.ddns_config.json
+
+logging.yaml
+*.log
+venv
